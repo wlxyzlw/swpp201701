@@ -17,3 +17,5 @@
 - Prerequisite : 
     + You need to create a new repository (`swpp-assn`) and place your assignments in the directory. We'll automatically score your assignments using various scripts. We'll elaborate on this on Thu (Mar.16).
     + If you don't have an available laptop, refer to https://github.com/snu-sf-class/swpp201701/issues/4 .
+
+- Assignment 1 is announced : https://github.com/snu-sf-class/swpp201701/issues/5
