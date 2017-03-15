@@ -9,4 +9,9 @@
 ## Announcements
 
 - Mar. 3 : 01.Introduction.SWPP.pdf is uploaded.
-- Mar. 10 : 2.SoftwareEngineeringIntro-Pub.pdf is uploaded.
+- Mar. 10 : 2.SoftwareEngineeringIntro.pdf is uploaded.
+- Mar. 15 : 3.VersionControl.pdf is uploaded.
+
+## Assignments
+
+- Prerequisite : You need to create a new repository (`swpp-assn`) and place your assignments in the directory. We'll automatically score your assignments using various scripts. We'll elaborate on this on Thu (Mar.16).
