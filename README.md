@@ -20,3 +20,5 @@
     + Mar. 21 : Please use bitbucket.org instead. See https://github.com/snu-sf-class/swpp201701/issues/11
 
 - Assignment 1 is announced : https://github.com/snu-sf-class/swpp201701/issues/5
+- Test result for private git submission is announced : https://github.com/snu-sf-class/swpp201701/issues/14
+
