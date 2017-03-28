@@ -11,6 +11,7 @@
 - Mar. 3 : 01.Introduction.SWPP.pdf is uploaded.
 - Mar. 10 : 2.SoftwareEngineeringIntro.pdf is uploaded.
 - Mar. 15 : 3.VersionControl.pdf is uploaded.
+- Mar. 23 : SoftwareDevelopmentProcProcess.pdf uploaded
 
 ## Assignments
 
@@ -21,4 +22,5 @@
 
 - Assignment 1 is announced : https://github.com/snu-sf-class/swpp201701/issues/5
 - Test result for private git submission is announced : https://github.com/snu-sf-class/swpp201701/issues/14
-
+- Assignment 2 is announced : https://github.com/snu-sf-class/swpp201701/issues/15
+- You should register a team : https://github.com/snu-sf-class/swpp201701/issues/16
