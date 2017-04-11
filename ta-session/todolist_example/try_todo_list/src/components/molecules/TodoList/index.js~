@@ -1,0 +1,26 @@
+import React, { PropTypes } from 'react'
+import styled from 'styled-components'
+import { font } from 'styled-theme'
+
+const Styledul = styled.ul`
+  font-family: ${font('primary')};
+`
+
+const TodoList = ({ todoliststate, onTodoClick }) => {
+    return (
+	    <Styledul>
+	    {todoliststate.map(todo =>
+			       <Todo key={todo.id}
+			       {...todo}
+			       onClick={() => onTodoClick(todo.id)}
+			       />
+			      )}
+	    </Styledul>
+  )
+}
+
+TodoList.propTypes = {
+  reverse: PropTypes.bool,
+}
+
+export default TodoList
