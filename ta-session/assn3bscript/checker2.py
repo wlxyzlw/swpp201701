@@ -37,58 +37,15 @@ def is_end():
 		for j in range(0, 19):
 			if pane[i][j] == 0:
 				continue
-			if is_end_check(i, j, 1, 0) or is_end_check(i, j, 0, 1) or is_end_check(i, j, 1, 1):
+			if is_end_check(i, j, 1, 0) or is_end_check(i, j, 0, 1) or is_end_check(i, j, 1, 1) or is_end_check(i, j, 1, -1) :
 				return pane[i][j]
 	return 0
 
-def findGoodPlace(isO, step):
-	# Is there winning position?
-	for i in range(0, 19):
-		for j in range(0, 19):
-			if pane[i][j] != 0:
-				continue
-			pane[i][j] = 1 if isO else 2
-			for (diri, dirj) in [(1, 0), (0, 1), (1, 1)] :
-				for t in range(0, 5) :
-					if is_end_check(i - diri * t, j - dirj * t, diri, dirj):
-						# found!
-						pane[i][j] = 0
-						return (i, j)
-			pane[i][j] = 0
-	# do randomly..
-	while True:
-		(i, j) = (randint(0, 18), randint(0, 18))
-		if pane[i][j] != 0:
-			continue
-		# place stone nearby enemy's / my stone
-		if step == 0:
-			# the first stone! there's no such thing
-			return (i, j)
-		found = False
-		for di in [-1, 0, 1] :
-			if (i + di) < 0 or 19 <= (i + di):
-				continue
-			for dj in [-1, 0, 1]:
-				if (j + dj) < 0 or 19 <= (j + dj):
-					continue
-				if pane[i + di][j + dj] != 0:
-					found = True
-					break
-		if not found: continue
-		return (i, j)
-
-def place_randomly(isO, step, easyGame):
-	(i, j) = (0, 0)
-	if easyGame:
-		(i, j) = (18 - int(step % 2), 18 - int(step / 2))
-	else:
-		(i, j) = findGoodPlace(isO, step)
-	
+def place(isO, i, j):
 	if isO:
 		pane[i][j] = 1
 	else:
 		pane[i][j] = 2
-	return (i, j)
 
 def get_char(i, j):
 	if pane[i][j] == 0:
@@ -116,8 +73,7 @@ def check_pane(driver):
 		for j in range(0, 19):
 			check_value(driver, "{0}_{1}".format(i, j), get_char(i, j))
 
-# param easyGame : trivial game (total 9-turns, O wins)
-def play_game(easyGame):
+def play_game(schedule):
 	print("============ Start simulation ===========")
 	click(driver, 'restart')
 	init_pane()
@@ -130,7 +86,8 @@ def play_game(easyGame):
 		else:
 			check_value(driver, 'status_label', 'Next X')
 
-		(i, j) = place_randomly(isO, step, easyGame)
+		(i, j) = schedule[step]
+		place(isO, i, j)
 		if isO:
 			print("Placing O to ({0}, {1})..".format(i, j))
 		else:
@@ -151,8 +108,33 @@ def play_game(easyGame):
 driver = webdriver.Chrome('/usr/local/bin/chromedriver')  # Optional argument, if not specified will search path.
 driver.get(sys.argv[1])
 
-play_game(True)
-play_game(True) # Run twice
+schedules = [
+# horizontal, O win / X win
+[], [],
+# vertical, O win / X win
+[], [],
+# (+1, +1), O win / X win
+[], [],
+# (+1, -1), O win / X win
+[], []
+]
+
+for i in range(0, 5):
+	schedules[0].append((18, 18 - i))
+	schedules[0].append((17, 18 - i))
+	schedules[2].append((18 - i, 18))
+	schedules[2].append((18 - i, 17))
+	schedules[4].append((18 - i, 18 - i))
+	schedules[4].append((17 - i, 18 - i))
+	schedules[6].append((18 - i, 14 + i))
+	schedules[6].append((18 - i, 13 + i))
+schedules[1] = [(0, 0)] + schedules[0]
+schedules[3] = [(0, 0)] + schedules[2]
+schedules[5] = [(0, 0)] + schedules[4]
+schedules[7] = [(0, 0)] + schedules[6]
+
+for schedule in schedules:
+	play_game(schedule)
 
 driver.quit()
 print("Successful!")
