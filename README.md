@@ -27,3 +27,4 @@
 - Assignment 2 is announced : https://github.com/snu-sf-class/swpp201701/issues/15
 - You should register a team : https://github.com/snu-sf-class/swpp201701/issues/16
 - Assignment 3 is announced : https://github.com/snu-sf-class/swpp201701/issues/22
+- Assignment 4 is announced : https://github.com/snu-sf-class/swpp201701/issues/30
