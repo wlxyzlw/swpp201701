@@ -18,7 +18,7 @@ def init_pane():
 		pane.append([0] * 19)	
 
 def is_end_check(begi, begj, di, dj):
-	if begi < 0 or begj < 0:
+	if begi < 0 or begj < 0 or 19 <= begi or 19 <= begj :
 		return False
 	v = pane[begi][begj]
 	if v == 0:
@@ -37,7 +37,7 @@ def is_end():
 		for j in range(0, 19):
 			if pane[i][j] == 0:
 				continue
-			if is_end_check(i, j, 1, 0) or is_end_check(i, j, 0, 1) or is_end_check(i, j, 1, 1):
+			if is_end_check(i, j, 1, 0) or is_end_check(i, j, 0, 1) or is_end_check(i, j, 1, 1) or is_end_check(i, j, 1, -1):
 				return pane[i][j]
 	return 0
 
@@ -48,7 +48,7 @@ def findGoodPlace(isO, step):
 			if pane[i][j] != 0:
 				continue
 			pane[i][j] = 1 if isO else 2
-			for (diri, dirj) in [(1, 0), (0, 1), (1, 1)] :
+			for (diri, dirj) in [(1, 0), (0, 1), (1, 1), (1, -1)] :
 				for t in range(0, 5) :
 					if is_end_check(i - diri * t, j - dirj * t, diri, dirj):
 						# found!

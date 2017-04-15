@@ -21,7 +21,7 @@ driver.get(sys.argv[1])
 check(driver, 'status_label')
 check(driver, 'restart')
 for i in range(0, 19):
-	for j in range(0, 18):
+	for j in range(0, 19):
 		check(driver, "{0}_{1}".format(i, j))
 driver.quit()
 print("Successful!")
