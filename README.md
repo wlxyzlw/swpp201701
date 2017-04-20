@@ -30,3 +30,4 @@
 - Assignment 4 is announced : https://github.com/snu-sf-class/swpp201701/issues/30
     + Changes in backend requirements , and some hints : https://github.com/snu-sf-class/swpp201701/issues/
 - Assignment 3A solution is uploaded.
+- Due date of assignment 4 is delayed to Apr. 23.
