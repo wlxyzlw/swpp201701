@@ -16,6 +16,10 @@
 - Apr. 04 : 5.SaaSArchitecture.Part1(,2).pdf uploaded
 - Apr. 20 : 04. WorkingInTemas.pdf, 06.RequirementAndSpecification.pdf uploaded
 
+## Projects
+
+- Apr. 25 : Project 1 is announced
+
 ## Assignments
 
 - Prerequisite : 
