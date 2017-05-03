@@ -15,6 +15,7 @@
 - Mar. 23 : SoftwareDevelopmentProcProcess.pdf uploaded
 - Apr. 04 : 5.SaaSArchitecture.Part1(,2).pdf uploaded
 - Apr. 20 : 04. WorkingInTemas.pdf, 06.RequirementAndSpecification.pdf uploaded
+- May. 3 : We have no class in May 4, May 9
 
 ## Projects
 
