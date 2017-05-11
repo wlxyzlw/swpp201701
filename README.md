@@ -21,6 +21,7 @@
 ## Projects
 
 - Apr. 25 : Project 1 is announced
+- May. 11 : About Project 2, please see https://github.com/snu-sf-class/swpp201701/issues/44 (formal announcement will be done later)
 
 ## Assignments
 
